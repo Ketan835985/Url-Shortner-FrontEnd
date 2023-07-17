@@ -16,7 +16,6 @@ export default function UrlShortner() {
     const handelSubmit = async (e) => {
         e.preventDefault();
         const { longUrl } = formData;
-        // console.log(longUrl);
 
         const response = await fetch('https://url-k7k2.onrender.com/url/shorten', {
             method: 'POST',
@@ -40,30 +39,26 @@ export default function UrlShortner() {
             })
         }
         if (e.target.value === "redirect") {
-            const response = await fetch('https://url-k7k2.onrender.com/url/shorten/path', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ shortUrl: JSON.parse(formData.shortUrl) })
-            })
-            const answer = await response.json();
-            // console.log(answer);
-            window.open(answer, '_blank')
+            const url = formData.shortUrl
+            if (url) {
+                window.open(JSON.parse(formData.shortUrl), '_blank')
+            } else {
+                alert("Url Not Generated")
+            }
         }
     }
     const handleCopy = async () => {
         try {
-          const textToCopy = textRef.current.innerText;
-          if (textToCopy) {
-            await navigator.clipboard.writeText(JSON.parse(formData.shortUrl));
-            // Provide some visual feedback to the user (optional)
-            alert('Text Copied!');
-          }
+            const textToCopy = textRef.current.innerText;
+            if (textToCopy) {
+                await navigator.clipboard.writeText(JSON.parse(formData.shortUrl));
+                // Provide some visual feedback to the user (optional)
+                alert('Text Copied!');
+            }
         } catch (err) {
-          console.error('Failed to copy text:', err);
+            alert('Failed to copy text:', err);
         }
-      };
+    };
     return (
         <>
             <h1>Url Shortner/Compressor</h1>
