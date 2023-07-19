@@ -12,7 +12,7 @@
     border-radius: 0.8rem 0 0 0.8rem;
     background: #23272F;
     box-shadow: inset 5px 5px 10px #0e1013, inset -5px -5px 10px #383e4b, 0px 0px 100px rgba(255, 212, 59, 0), 0px 0px 100px rgba(255, 102, 0, 0);
-    width: 100%;
+    width: 88%;
     flex-basis: 75%;
     padding: 1rem;
     border: none;
@@ -181,4 +181,12 @@
     color: rgb(255, 255, 255);
     text-align: center;
     filter: drop-shadow(red, green);
+  }
+
+
+  .heading{
+    font-weight: 800;
+    color: #9917FF;
+    text-align: center;
+    word-wrap: break-word;
   }
