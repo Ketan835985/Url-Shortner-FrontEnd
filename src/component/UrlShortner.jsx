@@ -62,7 +62,7 @@ export default function UrlShortner() {
     };
     return (
         <>
-            <h1 className='heading'>Url Shortner/Compressor</h1>
+            <h1 className='heading'><em>Url Shortner/Compressor</em></h1>
             <hr></hr>
             <form onSubmit={handelSubmit}>
                 <div className='input-container'>

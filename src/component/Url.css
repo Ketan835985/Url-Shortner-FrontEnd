@@ -186,7 +186,8 @@
 
   .heading{
     font-weight: 800;
-    color: #9917FF;
+    color: #450b11;
     text-align: center;
     word-wrap: break-word;
+    text-shadow: 1px 5px 5px rgb(209, 68, 68);
   }
